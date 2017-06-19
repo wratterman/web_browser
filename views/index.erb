@@ -1,5 +1,41 @@
 <html>
-  <head></head>
+  <head>
+    <% if @over_five %>
+      <style>
+        body {
+          background: red;
+          font-size: 24px;
+          color: 260DD7;
+        }
+      </style>
+    <% end %>
+    <% if @nil %>
+      <style>
+        body {
+          font-size: 24px;
+          color: 260DD7;
+        }
+      </style>
+    <% end %>
+    <% if @under_five %>
+      <style>
+        body {
+          background: #FF6666;
+          font-size: 24px;
+          color: 260DD7;
+        }
+      </style>
+    <% end %>
+    <% if @correct %>
+      <style>
+        body {
+          background: green;
+          font-size: 24px;
+          color: 260DD7;
+        }
+      </style>
+    <% end %>
+  </head>
   <body>
     <form>
       <input type='text' name='guess' />
@@ -8,10 +44,10 @@
     <p>
       <%= message %>
     </p>
-    <% if @correct %>
-      <p>
-        The SECRET NUMBER is <%= number %>
-      </p>
+    <% if @correct || cheater %>
+        <p>
+          The SECRET NUMBER is <%= number %>
+        </p>
     <% end %>
   </body>
 </html>
