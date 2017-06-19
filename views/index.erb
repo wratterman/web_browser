@@ -52,10 +52,17 @@
     <p>
       <%= message %>
     </p>
-    <% if @correct || cheater %>
+    <% if @correct %>
         <p>
           The SECRET NUMBER is <%= number %>
         </p>
+    <% end %>
+    <% if cheater %>
+      <p>
+        The SECRET NUMBER is <%= number %>, Kurt
+      </p>
+      <img src="https://media.giphy.com/media/fOAohhTy0xTG/giphy.gif"
+      />
     <% end %>
   </body>
 </html>
