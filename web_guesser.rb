@@ -9,7 +9,7 @@ get '/' do
                           :cheater => cheater}
 end
 
-SECRET_NUMBER = rand(100)
+SECRET_NUMBER = rand(1..100)
 
 @correct = false
 @over_five = false
